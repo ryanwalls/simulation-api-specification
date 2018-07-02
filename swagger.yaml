@@ -5110,6 +5110,7 @@ definitions:
     type: object
     required:
       - id
+      - coreVersion
       - isCore
       - organizationId
       - name
@@ -5125,6 +5126,9 @@ definitions:
         type: integer
         format: int32
         description: item identifier
+      coreVersion:
+        type: string
+        description: version of the core material this material was derived from
       isCore:
         type: boolean
         description: flag whether it is a core material or a custom material
