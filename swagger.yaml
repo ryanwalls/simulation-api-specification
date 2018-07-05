@@ -5228,6 +5228,7 @@ definitions:
       - laserSpeedUpperBound
       - laserPowerLowerBound
       - laserPowerUpperBound
+      - hardeningFactor
     properties:
       id:
         type: integer
@@ -5374,6 +5375,9 @@ definitions:
         type: number
         format: double
       laserPowerUpperBound:
+        type: number
+        format: double
+      hardeningFactor:
         type: number
         format: double
 
