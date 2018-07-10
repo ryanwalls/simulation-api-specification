@@ -4619,6 +4619,7 @@ definitions:
       - supportYieldStrengthRatio
       - elasticModulus
       - poissonRatio
+      - hardeningFactor
       - strainScalingFactor
       - outputDisplacementAfterCutoff
       - performSupportOptimization
@@ -4645,6 +4646,10 @@ definitions:
         type: number
       poissonRatio:
         type: number
+      hardeningFactor:
+        type: number
+        minimum: 0.0
+        maximum: 0.5
       strainScalingFactor:
         type: number
       buildFileId:
