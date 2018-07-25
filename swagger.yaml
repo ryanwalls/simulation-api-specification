@@ -6416,7 +6416,7 @@ definitions:
         minimum: 0
         maximum: 180
       sensorMinimumTemperature:
-        description: minimum temperature above which microstructure changes will be evaluated
+        description: Minimum temperature above which microstructure changes will be evaluated
         type: number
         format: double
       pointsOfInterest:
@@ -6439,6 +6439,7 @@ definitions:
       - x
       - 'y'
       - z
+      - radius
     properties:
       id:
         type: integer
@@ -6446,12 +6447,21 @@ definitions:
       simulationId:
         type: integer
         format: int32
+        description: ID of simulation this point belongs to
       label:
         type: string
+        description: User provided name of this point
       x:
         type: number
+        description: X coordinate of this point
       'y':
         type: number
+        description: Y coordinate of this point
       z:
         type: number
+        description: Z coordinate of this point
+      radius:
+        type: number
+        description: Radius of spherical area of interest centered at X, Y, Z above
+
 
