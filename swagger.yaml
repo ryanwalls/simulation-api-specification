@@ -6419,6 +6419,12 @@ definitions:
         description: Minimum temperature above which microstructure changes will be evaluated
         type: number
         format: double
+      heaterTemperature:
+        description: heater temperature in degrees kelvin, aka baseplate temperature
+        type: number
+        minimum: 0
+        maximum: 1000
+        format: double
       pointsOfInterest:
         description: List of points within the part where the microstructure will be evaluated
         type: array
