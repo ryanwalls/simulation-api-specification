@@ -6378,7 +6378,6 @@ definitions:
       - slicingStripeWidth
       - startingLayerAngle
       - layerRotationAngle
-      - useAutoSeed
       - microstructurePoints
     properties:
       layerThickness:
@@ -6416,9 +6415,6 @@ definitions:
         type: number
         minimum: 0
         maximum: 180
-      useAutoSeed:
-        description: "True indicates that the random number seed will be auto-generated, false means the user will provide the seed in randomSeed"
-        type: boolean
       microstructurePoints:
         description: List of points within the part where the microstructure will be evaluated
         type: array
@@ -6435,7 +6431,7 @@ definitions:
         maximum: 1000
         format: double
       randomSeed:
-        description: Seed value used for random number generation. If useAutoSeed is false, the user must provide the value of this field.
+        description: Seed value used for random number generation. If not provided it will be auto-generated.
         type: integer
         format: int32
 
