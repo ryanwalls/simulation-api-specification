@@ -6378,7 +6378,6 @@ definitions:
       - slicingStripeWidth
       - startingLayerAngle
       - layerRotationAngle
-      - sensorRadius
       - microstructurePoints
     properties:
       layerThickness:
@@ -6416,11 +6415,6 @@ definitions:
         type: number
         minimum: 0
         maximum: 180
-      sensorRadius:
-        type: number
-        description: Radius of spherical volume of interest in mm centered at each of the microstructurePoints
-        minimum: 0.05
-        maximum: 1.5
       microstructurePoints:
         description: List of points within the part where the microstructure will be evaluated
         type: array
@@ -6431,11 +6425,15 @@ definitions:
         type: number
         format: double
       heaterTemperature:
-        description: heater temperature in degrees kelvin, aka baseplate temperature
+        description: Heater temperature in degrees kelvin, aka baseplate temperature
         type: number
         minimum: 0
         maximum: 1000
         format: double
+      randomSeed:
+        description: Seed value used for random number generation. If not provided it will be auto-generated.
+        type: integer
+        format: int32
 
   MicrostructureSimulation:
     allOf:
@@ -6451,6 +6449,7 @@ definitions:
       - x
       - 'y'
       - z
+      - radius
     properties:
       id:
         type: integer
@@ -6471,5 +6470,11 @@ definitions:
       z:
         type: number
         description: Z coordinate of this point
+      radius:
+        type: number
+        description: Radius of hemispherical volume of interest in mm centered at each X,Y,Z
+        minimum: 0.05
+        maximum: 1.5
+
 
 
