@@ -6378,7 +6378,8 @@ definitions:
       - slicingStripeWidth
       - startingLayerAngle
       - layerRotationAngle
-      - pointsOfInterest
+      - sensorRadius
+      - microstructurePoints
     properties:
       layerThickness:
         description: Must be between 0.00001 to 0.0001 meters
@@ -6415,6 +6416,16 @@ definitions:
         type: number
         minimum: 0
         maximum: 180
+      sensorRadius:
+        type: number
+        description: Radius of spherical volume of interest in mm centered at each of the microstructurePoints
+        minimum: 0.05
+        maximum: 1.5
+      microstructurePoints:
+        description: List of points within the part where the microstructure will be evaluated
+        type: array
+        items:
+          $ref: "#/definitions/MicrostructurePoint"
       sensorMinimumTemperature:
         description: Minimum temperature above which microstructure changes will be evaluated
         type: number
@@ -6425,11 +6436,6 @@ definitions:
         minimum: 0
         maximum: 1000
         format: double
-      pointsOfInterest:
-        description: List of points within the part where the microstructure will be evaluated
-        type: array
-        items:
-          $ref: "#/definitions/MicrostructurePoint"
 
   MicrostructureSimulation:
     allOf:
@@ -6438,14 +6444,13 @@ definitions:
       - $ref: "#/definitions/MicrostructureSimulationParameters"
 
   MicrostructurePoint:
-    description: describes a point at which the microstructure will be evaluated
+    description: describes a location at which the microstructure will be evaluated
     required:
       - label
       - simulationId
       - x
       - 'y'
       - z
-      - radius
     properties:
       id:
         type: integer
@@ -6466,8 +6471,5 @@ definitions:
       z:
         type: number
         description: Z coordinate of this point
-      radius:
-        type: number
-        description: Radius of spherical area of interest centered at X, Y, Z above
 
 
