@@ -5015,26 +5015,31 @@ definitions:
         type: number
         minimum: 0.00002
         maximum: 0.002
-      minimumWallThickness:
+      minimumThickwallThickness:
         description: Must be between 0.00005 to 0.0003 meters, Must be less than maximumWallThickness
         type: number
-        minimum: 0.00005
-        maximum: 0.0003
-      maximumWallThickness:
+        minimum: 0
+        maximum: 0.01
+      maximumThickwallThickness:
        description: Must be between 0.00015 to 0.002 meters, Must be greater than minimumWallThickness
        type: number
-       minimum: 0.00015
-       maximum: 0.002
-      minimumWallDistance:
-       description: Must be between 0 to 0.0003 meters, Must be less than maximumWallDistance
-       type: number
        minimum: 0
-       maximum: 0.0003
-      maximumWallDistance:
-       description: Must be between 0 to 0.005 meters, Must be greater than minimumWallDistance
-       type: number
-       minimum: 0
-       maximum: 0.005
+       maximum: 0.01
+      thickwallDistance:
+        description: The distance between thickwall supports
+        type: number
+        minimum: 0
+        maximum: 0.01
+      thinwallThickness:
+        type: number
+        description: The width of the thinwall supports
+        minimum: 0.00002
+        maximum: 0.0005
+      maximumThinwallDistance:
+        description: The maximum distance between thinwalls
+        type: number
+        minimum: 0
+        maximum: 0.01
       minimumSupportHeight:
        description: Distance to move the part off the base plate for supports, Must be between 0 to 0.005 meters
        type: number
