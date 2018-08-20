@@ -4961,10 +4961,6 @@ definitions:
     required:
       - supportAngle
       - supportFactorOfSafety
-      - minimumWallThickness
-      - maximumWallThickness
-      - minimumWallDistance
-      - maximumWallDistance
       - minimumSupportHeight
       - voxelSize
       - supportYieldStrength
