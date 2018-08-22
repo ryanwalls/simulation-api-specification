@@ -4852,6 +4852,13 @@ definitions:
         type: array
         items:
           type: number
+      meshLayersPerLayer:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 100
+        description: Number of mesh layers used to simulate a single deposit layer
+
 
   PorositySimulation:
     allOf:
@@ -5262,12 +5269,6 @@ definitions:
         type: array
         items:
           $ref: "#/definitions/ZHeightRange"
-      meshLayersPerLayer:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 100
-        description: Number of mesh layers used to simulate a single deposit layer
 
   ThermalSimulation:
     allOf:
