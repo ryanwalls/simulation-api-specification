@@ -5107,6 +5107,12 @@ definitions:
         enum:
           - Generated
           - UserDefined
+      voxelSampleRate:
+        description: the amount of sub voxels per voxel in each direction (x,y,z)
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 10
 
   SingleBeadSimulation:
     allOf:
