@@ -4983,6 +4983,7 @@ definitions:
       - detectBladeCrash
       - outputLayerVtk
       - supportType
+      - voxelSampleRate
     properties:
       simulationParts:
         description: List of parts to simulate (current limit is one part, imposed by server)
@@ -5107,6 +5108,11 @@ definitions:
         enum:
           - Generated
           - UserDefined
+      voxelSampleRate:
+        description: the amount of sub voxels per voxel in each direction (x,y,z)
+        type: number
+        minimum: 1
+        maximum: 10
 
   SingleBeadSimulation:
     allOf:
