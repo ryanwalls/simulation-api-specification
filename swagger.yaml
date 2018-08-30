@@ -4983,7 +4983,6 @@ definitions:
       - detectBladeCrash
       - outputLayerVtk
       - supportType
-      - voxelSampleRate
     properties:
       simulationParts:
         description: List of parts to simulate (current limit is one part, imposed by server)
