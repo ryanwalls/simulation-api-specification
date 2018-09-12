@@ -4748,7 +4748,6 @@ definitions:
       - originXValues
       - originYValues
       - solidusTemperatureValues
-      - heaterTemperature
     properties:
       geometryWidth:
         description: Must be between 0.001 to 0.01 meters
@@ -4862,8 +4861,8 @@ definitions:
       heaterTemperature:
         description: heater temperature in degrees kelvin
         type: number
-        minimum: 0
-        maximum: 1000
+        minimum: 293
+        maximum: 474
         format: double
 
   PorositySimulation:
@@ -4884,7 +4883,6 @@ definitions:
       - laserAbsorptivityInSolidValues
       - solidusTemperatureValues
       - liquidusTemperatureValues
-      - heaterTemperature
     properties:
       beadType:
         description: Type of single bead simulation - either bead on plate or bead on powder.
@@ -4973,8 +4971,8 @@ definitions:
       heaterTemperature:
         description: heater temperature in degrees kelvin
         type: number
-        minimum: 0
-        maximum: 1000
+        minimum: 293
+        maximum: 474
         format: double
 
 
@@ -5163,7 +5161,6 @@ definitions:
       - anisotropicStrainCoefficientsParallel
       - anisotropicStrainCoefficientsPerpendicular
       - anisotropicStrainCoefficientsZ
-      - heaterTemperature
       - outputInstantDynamicSensor
       - outputPrintRitePcsSensor
       - outputInstantStaticSensor
@@ -5236,8 +5233,8 @@ definitions:
       heaterTemperature:
         description: heater temperature in degrees kelvin
         type: number
-        minimum: 0
-        maximum: 1000
+        minimum: 293
+        maximum: 474
         format: double
       outputInstantDynamicSensor:
         type: boolean
@@ -5850,8 +5847,8 @@ definitions:
       heaterTemperature:
         description: heater temperature in degrees kelvin
         type: number
-        minimum: 0
-        maximum: 1000
+        minimum: 293
+        maximum: 474
         format: double
       layerDelay:
         description: delay time between layers, stored in seconds
@@ -6455,8 +6452,8 @@ definitions:
       heaterTemperature:
         description: Heater temperature in degrees kelvin, aka baseplate temperature
         type: number
-        minimum: 0
-        maximum: 1000
+        minimum: 293
+        maximum: 474
         format: double
       randomSeed:
         description: Seed value used for random number generation. If not provided it will be auto-generated.
