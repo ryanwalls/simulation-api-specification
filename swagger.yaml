@@ -4748,6 +4748,7 @@ definitions:
       - originXValues
       - originYValues
       - solidusTemperatureValues
+      - heaterTemperature
     properties:
       geometryWidth:
         description: Must be between 0.001 to 0.01 meters
@@ -4858,7 +4859,12 @@ definitions:
         minimum: 1
         maximum: 100
         description: Number of mesh layers used to simulate a single deposit layer
-
+      heaterTemperature:
+        description: heater temperature in degrees kelvin
+        type: number
+        minimum: 0
+        maximum: 1000
+        format: double
 
   PorositySimulation:
     allOf:
@@ -4878,6 +4884,7 @@ definitions:
       - laserAbsorptivityInSolidValues
       - solidusTemperatureValues
       - liquidusTemperatureValues
+      - heaterTemperature
     properties:
       beadType:
         description: Type of single bead simulation - either bead on plate or bead on powder.
@@ -4963,6 +4970,18 @@ definitions:
         type: array
         items:
           type: number
+      heaterTemperature:
+        description: heater temperature in degrees kelvin
+        type: number
+        minimum: 0
+        maximum: 1000
+        format: double
+
+
+  SingleBeadSimulation:
+    allOf:
+      - $ref: "#/definitions/Simulation"
+      - $ref: "#/definitions/SingleBeadSimulationParameters"
 
   PartBasedSimulationParameters:
     required:
@@ -5113,11 +5132,6 @@ definitions:
         format: int32
         minimum: 1
         maximum: 10
-
-  SingleBeadSimulation:
-    allOf:
-      - $ref: "#/definitions/Simulation"
-      - $ref: "#/definitions/SingleBeadSimulationParameters"
 
   AssumedStrainSimulationParameters:
     properties:
