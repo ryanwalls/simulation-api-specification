@@ -5282,10 +5282,16 @@ definitions:
         type: number
         description: should be a number between 0.05 and 1.5 mm
       coaxialAverageSensorZHeights:
-        description: List of z height (mm) ranges within the part where the coaxial average sensor will collect data
+        description: list of z height (mm) ranges within the part where the coaxial average sensor will collect data
         type: array
         items:
           $ref: "#/definitions/ZHeightRange"
+      meshResolutionFactor:
+        description: multiplier of fine grid spacing for course grid portion of FEA mesh
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 15
 
   ThermalSimulation:
     allOf:
