@@ -5265,7 +5265,7 @@ definitions:
         type: integer
         format: int32
         minimum: 1
-        maximum: 10
+        maximum: 12
 
   ThermalSimulation:
     allOf:
