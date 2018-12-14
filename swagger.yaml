@@ -2,15 +2,7 @@ swagger: "2.0"
 info:
   version: 1.1.0
   title: Simulation API
-  description: An API for managing simulations within 3DSIM.
-  termsOfService: https://3dsim.com
-  contact:
-    name: ANSYS Additive Cloud API Team
-    email: support@3dsim.com
-    url: https://3dsim.github.io
-  license:
-    name: MIT
-    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+  description: An API for managing simulations within ANSYS Additive.
 host: 3dsim.cloud.tyk.io
 basePath: /simulation-api
 schemes:
